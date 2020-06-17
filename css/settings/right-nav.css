@@ -1,0 +1,85 @@
+.header-main {
+	right: 0 !important;
+}
+
+.pt-home .banner {
+	right: 10% !important;
+}
+
+.pt-home .lang {
+	right: 11% !important;	
+}
+
+.pt-home .social {
+	left: 20px !important;	
+}
+
+.pt-about, 
+.pt-resume,
+.pt-education,
+.pt-projects,
+.pt-portfolio, 
+.pt-blog,
+.pt-medium,
+.pt-contact {
+	-webkit-transform: translateX(-200%) !important;
+	-ms-transform: translateX(-200%) !important;
+	transform: translateX(-200%) !important;
+}
+
+#about:target .pt-about,
+#resume:target .pt-resume,
+#education:target .pt-education,
+#projects:target .pt-projects,
+#portfolio:target .pt-portfolio,
+#blog:target .pt-blog,
+#medium:target .pt-medium,
+#contact:target .pt-contact {
+	-webkit-transform: translateX(0%) !important;
+	-ms-transform: translateX(0%) !important;
+	transform: translateX(0%) !important;
+}
+
+.blog-page .blog-container,
+.blog-list .blog-list-container {
+    right: 10% !important;
+}
+
+.blog-page .blog-nav {
+	right: 47% !important;
+}
+
+.header-mobile .header-toggle {
+	float: left;
+}
+
+.blog-list .blog-head h2,
+.blog-list .blog-head .blog-breadcrumb {
+	width: 90% !important;
+    right: 0 !important;
+    left: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+	.header-main {
+		right: -135px !important;
+	}
+	.header-main.on {
+        right: 0 !important;
+    }
+	.blog-page .blog-container {
+		right: 0 !important;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.pt-home .banner {
+		left: 0 !important;
+	}
+	.pt-home .lang {
+		right: 10px !important;	
+	}
+	.pt-home .social {
+		right: 10px !important;	
+	}
+}
