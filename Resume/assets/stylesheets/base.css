@@ -80,8 +80,8 @@ h3 {
   text-transform: uppercase;
 }
 h1 {
-  font-weight: 900;
-  font-size: 1.5rem;
+  font-weight: 800;
+  font-size: 2rem;
   margin-bottom: 0;
 }
 h2 {
@@ -1088,4 +1088,37 @@ footer {
   main:nth-last-child(3) {
     margin-bottom: 0;
   }
+}
+
+
+.btn-wrapper {
+  text-align: center;
+  margin: 0px;
+}
+
+.btn-container {
+  padding: 16px 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 207, 255, 1) 0%,
+    rgb(238, 255, 0) 33.33%,
+    rgb(255, 0, 247) 66.66%,
+    rgba(0, 207, 255, 1) 100%
+  );
+  display: inline-block;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.download-btn {
+  padding: 10px 20px;
+  color: black;
+  background: white;
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  font-family: "poppins";
 }

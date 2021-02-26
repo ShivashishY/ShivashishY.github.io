@@ -2206,11 +2206,11 @@ blockquote:before,
     color: #495057;
 }
 
-/* Google Map */
+/* Google Map 
 .pt-contact #map {
     width: 100%;
     height: 300px;
-}
+} */
 
 /* Contact validation */
 .contact-valid .error-messages {
