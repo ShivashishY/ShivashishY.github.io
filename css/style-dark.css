@@ -1009,7 +1009,7 @@ blockquote:before,
 /* Logo */
 .header-main .logo {
     text-align: center;
-	padding: 15px 0;
+	padding: 40px 0;
 	border-right-color: #0e0f10;
     border-bottom: 5px solid #0e0f10;
 }
