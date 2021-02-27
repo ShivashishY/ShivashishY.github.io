@@ -201,7 +201,7 @@ blockquote span img {
 .music-bg {
 	display: block;
 	cursor: pointer;
-	padding: 40px 0;
+	padding: 15px 0;
 	text-align: center;
 	border-left-color: #fff;
 	border-top: 5px solid #fff;
@@ -1012,7 +1012,7 @@ blockquote:before,
 /* Logo */
 .header-main .logo {
     text-align: center;
-	padding: 40px 0;
+	padding: 15px 0;
 	border-right-color: #fff;
     border-bottom: 5px solid #fff;
 }
@@ -2206,7 +2206,11 @@ blockquote:before,
     color: #495057;
 }
 
-
+/* Google Map */
+.pt-contact #map {
+    width: 100%;
+    height: 300px;
+}
 
 /* Contact validation */
 .contact-valid .error-messages {
