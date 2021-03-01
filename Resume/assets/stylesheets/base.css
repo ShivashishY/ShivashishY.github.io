@@ -1,3 +1,4 @@
+
 :root {
   --main-background-color: #fff;
   /* #444 */
@@ -583,7 +584,8 @@ article {
 }
 .divider.fat {
   border-top: var(--color-divider-fat);
-  width: 33%;
+  width: 40%;
+     
 }
 
 /* Language */
@@ -1029,7 +1031,7 @@ dialog:target ~ * {
 header {
   position: fixed;
   z-index: 1;
-  background: white;
+  background: white; 
   top: 0;
   left: 0;
   height: 2em;
@@ -1091,34 +1093,75 @@ footer {
 }
 
 
-.btn-wrapper {
-  text-align: center;
-  margin: 0px;
-}
+/* Tags */
 
-.btn-container {
-  padding: 16px 8px;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 207, 255, 1) 0%,
-    rgb(238, 255, 0) 33.33%,
-    rgb(255, 0, 247) 66.66%,
-    rgba(0, 207, 255, 1) 100%
-  );
-  display: inline-block;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.download-btn {
-  padding: 10px 20px;
-  color: black;
-  background: white;
-  text-align: right;
-  text-decoration: none;
+[data-tag]>*:first-child:after {
+  font-size: 0.6em;
+  line-height: 1rem;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  border-radius: 8px;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-  font-family: "poppins";
+  display: inline-block;
+  padding: 0em 0.75em;
+  border-radius: 15px;
+  height: 1rem;
+  margin-left: 0.5em;
+  margin-top: -1px;
+  vertical-align: middle;
+  box-shadow: inset 0 0 0 1px;
+  opacity: 0.5;
+  transition: opacity 0.2s linear;
+}
+
+[data-tag]:hover>*:first-child:after {
+  color: #ffffff;
+  opacity: 1;
+  box-shadow: none;
+}
+
+[data-tag="work"]>*:first-child:after {
+  content: "work";
+}
+
+[data-tag="hackathon"]>*:first-child:after {
+  content: "hackathon";
+}
+
+[data-tag="projects"]>*:first-child:after {
+  content: "projects";
+}
+
+[data-tag="github"]>*:first-child:after {
+  content: "github";
+}
+
+[data-tag="education"]>*:first-child:after {
+  content: "education";
+}
+
+[data-tag="remote"]>*:first-child:after {
+  content: "remote";
+}
+
+[data-tag="work"]:hover>*:first-child:after {
+  background: blue;
+}
+
+[data-tag="hackathon"]:hover>*:first-child:after {
+  background: midnightblue;
+}
+
+[data-tag="projects"]:hover>*:first-child:after {
+  background: red;
+}
+
+[data-tag="github"]:hover>*:first-child:after {
+  background: purple;
+}
+
+[data-tag="education"]:hover>*:first-child:after {
+  background: green;
+}
+
+[data-tag="remote"]:hover>*:first-child:after {
+  background: rgb(255, 222, 73);
 }
