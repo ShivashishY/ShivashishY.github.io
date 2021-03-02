@@ -1166,3 +1166,13 @@ footer {
 [data-tag="remote"]:hover>*:first-child:after {
   background: rgb(255, 222, 73);
 }
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
