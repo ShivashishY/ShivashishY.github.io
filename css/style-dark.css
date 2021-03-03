@@ -3401,3 +3401,11 @@ blockquote:before,
     font-weight:normal;
     font-size: 15px;
 }
+
+mark {
+  background-color: yellow;
+  color: black;
+	display: inline-block; 
+       height: 1.15em;
+       line-height: 1.10;
+}
