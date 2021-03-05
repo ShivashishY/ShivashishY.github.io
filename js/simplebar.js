@@ -3021,8 +3021,8 @@
             // Subscription to the "Transitionend" event is used as a workaround for
             // delayed transitions. This way it's possible to capture at least the
             // final state of an element.
-            document.addEventListener('transitionend', this.onTransitionEnd_);
-            window.addEventListener('resize', this.refresh);
+            document.addEventListener('transitionend', this.onTransitionEnd_, {passive: true});
+            window.addEventListener('resize', this.refresh, {passive: true});
             if (mutationObserverSupported) {
                 this.mutationsObserver_ = new MutationObserver(this.refresh);
                 this.mutationsObserver_.observe(document, {
@@ -3030,10 +3030,11 @@
                     childList: true,
                     characterData: true,
                     subtree: true
+					
                 });
             }
             else {
-                document.addEventListener('DOMSubtreeModified', this.refresh);
+                document.addEventListener('DOMSubtreeModified', this.refresh, {passive: true});
                 this.mutationEventsAdded_ = true;
             }
             this.connected_ = true;
@@ -3050,13 +3051,13 @@
             if (!isBrowser || !this.connected_) {
                 return;
             }
-            document.removeEventListener('transitionend', this.onTransitionEnd_);
-            window.removeEventListener('resize', this.refresh);
+            document.removeEventListener('transitionend', this.onTransitionEnd_, {passive: true});
+            window.removeEventListener('resize', this.refresh, {passive: true});
             if (this.mutationsObserver_) {
                 this.mutationsObserver_.disconnect();
             }
             if (this.mutationEventsAdded_) {
-                document.removeEventListener('DOMSubtreeModified', this.refresh);
+                document.removeEventListener('DOMSubtreeModified', this.refresh, {passive: true});
             }
             this.mutationsObserver_ = null;
             this.mutationEventsAdded_ = false;
@@ -3785,8 +3786,8 @@
         this.onEndDrag = function (e) {
           e.preventDefault();
           e.stopPropagation();
-          document.removeEventListener('mousemove', _this.drag);
-          document.removeEventListener('mouseup', _this.onEndDrag);
+          document.removeEventListener('mousemove', _this.drag, {passive: true});
+          document.removeEventListener('mouseup', _this.onEndDrag, {passive: true});
         };
   
         this.el = element;
@@ -3945,17 +3946,17 @@
   
           // Event listeners
           if (this.options.autoHide) {
-            this.el.addEventListener('mouseenter', this.onMouseEnter);
+            this.el.addEventListener('mouseenter', this.onMouseEnter, {passive: true});
           }
   
           ['mousedown', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'].forEach(function (e) {
             _this3.el.addEventListener(e, _this3.onPointerEvent, true);
           });
-          this.el.addEventListener('mousemove', this.onMouseMove);
-          this.el.addEventListener('mouseleave', this.onMouseLeave);
-          this.contentEl.addEventListener('scroll', this.onScroll); // Browser zoom triggers a window resize
+          this.el.addEventListener('mousemove', this.onMouseMove, {passive: true});
+          this.el.addEventListener('mouseleave', this.onMouseLeave, {passive: true});
+          this.contentEl.addEventListener('scroll', this.onScroll, {passive: true}); // Browser zoom triggers a window resize
   
-          window.addEventListener('resize', this.onWindowResize); // MutationObserver is IE11+
+          window.addEventListener('resize', this.onWindowResize, {passive: true}); // MutationObserver is IE11+
   
           if (typeof MutationObserver !== 'undefined') {
             // create an observer instance
@@ -4152,8 +4153,8 @@
           var eventOffset = axis === 'y' ? e.pageY : e.pageX;
           this.axis[axis].dragOffset = eventOffset - scrollbar.getBoundingClientRect()[this.axis[axis].offsetAttr];
           this.draggedAxis = axis;
-          document.addEventListener('mousemove', this.drag);
-          document.addEventListener('mouseup', this.onEndDrag);
+          document.addEventListener('mousemove', this.drag, {passive: true});
+          document.addEventListener('mouseup', this.onEndDrag, {passive: true});
         }
         /**
          * Drag scrollbar handle
@@ -4175,16 +4176,16 @@
   
           // Event listeners
           if (this.options.autoHide) {
-            this.el.removeEventListener('mouseenter', this.onMouseEnter);
+            this.el.removeEventListener('mouseenter', this.onMouseEnter, {passive: true});
           }
   
           ['mousedown', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'].forEach(function (e) {
-            _this4.el.removeEventListener(e, _this4.onPointerEvent);
+            _this4.el.removeEventListener(e, _this4.onPointerEvent, {passive: true});
           });
-          this.el.removeEventListener('mousemove', this.onMouseMove);
-          this.el.removeEventListener('mouseleave', this.onMouseLeave);
-          this.contentEl.removeEventListener('scroll', this.onScroll);
-          window.removeEventListener('resize', this.onWindowResize);
+          this.el.removeEventListener('mousemove', this.onMouseMove, {passive: true});
+          this.el.removeEventListener('mouseleave', this.onMouseLeave, {passive: true});
+          this.contentEl.removeEventListener('scroll', this.onScroll, {passive: true});
+          window.removeEventListener('resize', this.onWindowResize, {passive: true});
           this.mutationObserver && this.mutationObserver.disconnect();
           this.resizeObserver.disconnect(); // Cancel all debounced functions
   
@@ -4288,8 +4289,8 @@
             // Handle it asynchronously to allow scripts the opportunity to delay init
             window.setTimeout(this.initDOMLoadedElements);
           } else {
-            document.addEventListener('DOMContentLoaded', this.initDOMLoadedElements);
-            window.addEventListener('load', this.initDOMLoadedElements);
+            document.addEventListener('DOMContentLoaded', this.initDOMLoadedElements, {passive: true});
+            window.addEventListener('load', this.initDOMLoadedElements, {passive: true});
           }
         } // Helper function to retrieve options from element attributes
   
@@ -4334,8 +4335,8 @@
       }, {
         key: "initDOMLoadedElements",
         value: function initDOMLoadedElements() {
-          document.removeEventListener('DOMContentLoaded', this.initDOMLoadedElements);
-          window.removeEventListener('load', this.initDOMLoadedElements);
+          document.removeEventListener('DOMContentLoaded', this.initDOMLoadedElements, {passive: true});
+          window.removeEventListener('load', this.initDOMLoadedElements, {passive: true});
           Array.from(document.querySelectorAll('[data-simplebar]')).forEach(function (el) {
             if (!el.SimpleBar) new SimpleBar(el, SimpleBar.getElOptions(el));
           });
