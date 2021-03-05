@@ -3950,7 +3950,7 @@
           }
   
           ['mousedown', 'click', 'dblclick', 'touchstart', 'touchend', 'touchmove'].forEach(function (e) {
-            _this3.el.addEventListener(e, _this3.onPointerEvent, true);
+            _this3.el.addEventListener(e, _this3.onPointerEvent, true, {passive: true});
           });
           this.el.addEventListener('mousemove', this.onMouseMove, {passive: true});
           this.el.addEventListener('mouseleave', this.onMouseLeave, {passive: true});
