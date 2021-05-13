@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: shivashishy.github.io
+Token: 8a4dcedce99fb5f698ace2520fd043f464814436917df4c321d22d63f5b133cd
