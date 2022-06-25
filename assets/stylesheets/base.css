@@ -781,6 +781,7 @@ li.highlighted {
   padding: 0.5em;
   background: rgba(0,0,0,0.04);
   border-radius: 4px;
+  
 }
 
 /* Bordered list item */
@@ -834,6 +835,7 @@ li.bordered > ul > details > div {
 /* Tags */
 .tags.small {
   font-size: 0.88em;
+  
 }
 .tags.bulleted .tag:not(:last-child):after {
   content: "●";
@@ -1171,6 +1173,11 @@ footer {
   background: rgb(255, 222, 73);
 }
 
+[data-tag="website"]:hover>*:first-child:after {
+  background: rgb(159, 7, 230);
+}
+
+
 .footer {
    position: fixed;
    left: 0;
@@ -1180,3 +1187,51 @@ footer {
    color: white;
    text-align: center;
 }
+
+
+
+
+.tags .tag {
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 0.28571429rem;
+  display: inline-block;
+  padding: 5px;
+  background: #1594e9;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.tags .tag:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.tags .tag a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.languages .tag {
+  background: mediumpurple;
+}
+
+.framework .tag {
+  background: #277262;
+}
+
+.database .tag {
+  background: #57992c;
+}
+
+.packages .tag {
+  background: #c57373;
+}
+
+.writing .tag {
+  background: orange;
+  color: #000;
+}
+
+
+
